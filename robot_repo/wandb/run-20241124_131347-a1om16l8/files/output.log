@@ -1,0 +1,48 @@
+README.md: 100%|███████████████████████████████████████████████████████████████████████| 580/580 [00:00<00:00, 718kB/s]
+adapter_model.safetensors: 112MB [00:16, 6.99MB/s]                                                                     
+100%|████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:16<00:00, 16.39s/it]
+Saved model to https://huggingface.co/zttiannnn/lora_model_3b_128
+tokenizer.json: 32.0MB [00:03, 9.68MB/s]                                                         | 0/1 [00:00<?, ?it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:03<00:00,  3.61s/it]
+<|begin_of_text|>Below is an instruction that describes a task, paired with an input that provides further context. Write a response that appropriately completes the request.
+
+### Instruction:
+please assess the authenticity of this news and provide reasons
+
+### Input:
+id: 11200.json, statement: Says 57 percent of federal spending goes to the military and just 1 percent goes to food and agriculture, including food stamps., evidence: In 2015, we rated as False a claim that 57% of federal spending goes to the military and just 1% goes to food and agriculture, including food stamps.; At the time, military spending, including spending on homeland security, accounted for 54% of discretionary spending — that is, not-mandatory spending. ; Currently, about 17% of the federal budget goes toward defense, according to the nonpartisan Congressional Budget Office — a figure confirmed to us by Marc Goldwein of the Committee for a Responsible Federal Budget. ; In fact, a spokesman for the congresswoman said Omar was referring to discretionary funding. He cited a Washington Post article that says defense would be 57% of discretionary spending in the 2020 federal budget request unveiled by President Donald Trump in March 2019.; Rather than being dominated by the military, the budget was actually dominated by spending on Social Security, Medicare and Medicaid, we found.
+
+### Response:
+Traceback (most recent call last):
+  File "/home/ubuntu-user/robot_repo/ds_course/train_news.py", line 161, in <module>
+    _ = model.generate(**inputs, streamer = text_streamer, max_new_tokens = 128)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/peft/peft_model.py", line 1704, in generate
+    outputs = self.base_model.generate(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/transformers/generation/utils.py", line 2215, in generate
+    result = self._sample(
+             ^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/transformers/generation/utils.py", line 3206, in _sample
+    outputs = self(**model_inputs, return_dict=True)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/accelerate/hooks.py", line 170, in new_forward
+    output = module._old_forward(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/unsloth/models/llama.py", line 939, in _CausalLM_fast_forward
+    outputs = fast_forward_inference(
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/unsloth/models/llama.py", line 875, in LlamaModel_fast_forward_inference
+    seq_len = past_key_values[0][0].shape[-2]
+              ~~~~~~~~~~~~~~~^^^
+  File "<string>", line 10, in __cache_utils_getitem__
+RuntimeError: Unsloth: You must call `FastLanguageModel.for_inference(model)` before doing inference for Unsloth models.

@@ -1,0 +1,34 @@
+Map (num_proc=2): 100%|█████████████████████████████████████████████████| 10047/10047 [00:03<00:00, 3004.27 examples/s]
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 10,047 | Num Epochs = 15
+O^O/ \_/ \    Batch size per device = 128 | Gradient Accumulation steps = 2
+\        /    Total batch size = 256 | Total steps = 585
+ "-____-"     Number of trainable parameters = 24,313,856
+[34m[1mwandb[0m: [33mWARNING[0m The `run_name` is currently set to the same value as `TrainingArguments.output_dir`. If this was not intended, please specify a different run name by setting the `TrainingArguments.run_name` parameter.
+  2%|█▎                                                                             | 10/585 [10:04<9:36:09, 60.12s/it]Traceback (most recent call last):
+{'loss': 2.5722, 'grad_norm': 0.3770129978656769, 'learning_rate': 2e-05, 'epoch': 0.03}
+{'loss': 2.6116, 'grad_norm': 0.38177216053009033, 'learning_rate': 4e-05, 'epoch': 0.05}
+{'loss': 2.6382, 'grad_norm': 0.38368934392929077, 'learning_rate': 6e-05, 'epoch': 0.08}
+{'loss': 2.5701, 'grad_norm': 0.38613003492355347, 'learning_rate': 8e-05, 'epoch': 0.1}
+{'loss': 2.5605, 'grad_norm': 0.4162586033344269, 'learning_rate': 0.0001, 'epoch': 0.13}
+{'loss': 2.5147, 'grad_norm': 0.4617736041545868, 'learning_rate': 9.999926652940913e-05, 'epoch': 0.15}
+{'loss': 2.4667, 'grad_norm': 0.47657787799835205, 'learning_rate': 9.999706613915566e-05, 'epoch': 0.18}
+{'loss': 2.4085, 'grad_norm': 0.4629690647125244, 'learning_rate': 9.999339889379647e-05, 'epoch': 0.2}
+{'loss': 2.3155, 'grad_norm': 0.4371776878833771, 'learning_rate': 9.998826490092421e-05, 'epoch': 0.23}
+{'loss': 2.2255, 'grad_norm': 0.39931926131248474, 'learning_rate': 9.99816643111642e-05, 'epoch': 0.25}
+  File "/home/ubuntu-user/robot_repo/ds_course/train_news.py", line 131, in <module>
+    trainer_stats = trainer.train()
+                    ^^^^^^^^^^^^^^^
+  File "<string>", line 157, in train
+  File "<string>", line 380, in _fast_inner_training_loop
+  File "<string>", line 64, in _unsloth_training_step
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/accelerate/accelerator.py", line 2241, in backward
+    loss.backward(**kwargs)
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/ubuntu-user/anaconda3/envs/unsloth_env/lib/python3.11/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

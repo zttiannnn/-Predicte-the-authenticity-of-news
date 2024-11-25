@@ -1,0 +1,8 @@
+{"time":"2024-11-24T16:50:58.389360732+08:00","level":"INFO","msg":"using version","core version":"0.18.7"}
+{"time":"2024-11-24T16:50:58.38938082+08:00","level":"INFO","msg":"created symlink","path":"/home/ubuntu-user/robot_repo/wandb/run-20241124_165058-rz8aqrm7/logs/debug-core.log"}
+{"time":"2024-11-24T16:50:58.493943311+08:00","level":"INFO","msg":"created new stream","id":"rz8aqrm7"}
+{"time":"2024-11-24T16:50:58.494014725+08:00","level":"INFO","msg":"stream: started","id":"rz8aqrm7"}
+{"time":"2024-11-24T16:50:58.494183493+08:00","level":"INFO","msg":"handler: started","stream_id":"rz8aqrm7"}
+{"time":"2024-11-24T16:50:58.494170438+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"rz8aqrm7"}
+{"time":"2024-11-24T16:50:58.494293218+08:00","level":"INFO","msg":"sender: started","stream_id":"rz8aqrm7"}
+{"time":"2024-11-24T16:50:58.971092276+08:00","level":"INFO","msg":"Starting system monitor"}
